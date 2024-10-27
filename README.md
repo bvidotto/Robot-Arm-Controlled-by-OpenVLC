@@ -36,33 +36,36 @@ We employed version 1.3 of OpenVLC for our communication framework. This system 
 ### Hardware Components
 
 - **BeagleBone Black (BBB)**: A low-cost open-source board designed for developers and hobbyists, running a Linux operating system.
+  
    <figure align="center">
       <img src="./images/image27.webp" alt="bar" width="24%">
-      <figcaption>The BeagleBone Black (BBB)</figcaption>
    </figure>
+   
 - **OpenVLC Cape**: Based on version 1.3, it includes a high-power LED and a photodiode.
-   <figure align="center">
+
+  <figure align="center">
       <img src="./images/image26.webp" alt="bar" width="24%">
-      <figcaption>The OpenVLC cape</figcaption>
    </figure>
+   
 - **Robotic Arm**: The Tinkerkit Braccio robot by Arduino, featuring six servo motors and a special cap for the arm.
-   <figure align="center">
+
+  <figure align="center">
       <img src="./images/image28.webp" alt="bar" width="24%">
-      <figcaption>The Arduino robot arm</figcaption>
    </figure>
+   
 - **Arduino Uno**: Central to controlling the robotic arm's movements.
 - **RGB LED**: Used for visual feedback during operation.
-   <figure align="center">
+
+  <figure align="center">
       <img src="./images/image29.webp" alt="bar" width="24%">
-      <figcaption>The special cap for the robot arm above the Arduino Uno (on the left) and the RGB LED on the breadboard.</figcaption>
    </figure>
 
 ## Architecture
 
 The architecture consists of multiple layers of communication:
+  
    <figure align="center">
       <img src="./images/image30.webp" alt="bar" width="100%">
-      <figcaption>The architecture.</figcaption>
    </figure>
 
 1. **Client-Server Connection via USB**:
@@ -85,7 +88,6 @@ The architecture consists of multiple layers of communication:
 
    <figure align="center">
       <img src="./images/image31.webp" alt="bar" width="40%">
-      <figcaption>The graphical user interface (GUI).</figcaption>
    </figure>
 
 ## Demonstration
@@ -106,7 +108,6 @@ We conducted extensive tests (over 12 hours) to evaluate stability under simulat
    <figure align="center">
       <img src="./images/image35.webp" alt="bar" width="23%">
       <img src="./images/image36.webp" alt="bar" width="50%">
-      <figcaption>A schema of the testing protocol for parasitic light (left) and the loss rate of information by the time elapsed.</figcaption>
    </figure>
 On the previous image, we notice that the OpenVLC is quite reliable with relation to parasitic light.
 
@@ -116,7 +117,6 @@ Both BeagleBones were positioned at the same level on the ground. Tests were con
    <figure align="center">
       <img src="./images/image38.webp" alt="bar" width="30%">
       <img src="./images/image37.webp" alt="bar" width="40%">
-      <figcaption>A schema of the testing protocol for distance (left) and the evolution of packet loss rate by the distance.</figcaption>
    </figure>
 On this image, we can see that the receptor seems to be saturated below one meter and looses too much information over 5.5 meters.
 
@@ -125,7 +125,6 @@ On this image, we can see that the receptor seems to be saturated below one mete
 We analyzed throughput in a dim environment with BeagleBones placed horizontally. The maximum throughput was capped at 400 kbit/s, calculated considering the packet loss rate : it is not worth spending the extra energy to go beyon 400 kbit/s. This value seems to be the sweet spot as 350 kbit/s suffers from too much loss.
    <figure align="center">
       <img src="./images/image39.webp" alt="bar" width="65%">
-      <figcaption>Packet loss rate and maximum throughput as a function of time.</figcaption>
    </figure>
 
 ## Challenges
