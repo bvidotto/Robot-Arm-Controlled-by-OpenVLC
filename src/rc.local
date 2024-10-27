@@ -1,0 +1,21 @@
+
+#!/bin/bash
+#
+#rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution #bits.
+#
+# By default this script does nothing.
+cd /home/debian/OpenVLC/Latest_Version/Driver sudo bash load_test.sh
+cd
+cd /home/debian/OpenVLC/Latest_Version/PRU/TX
+sudo bash deploy.sh
+cd
+#python testBBB_TX.py
+date >> /home/debian/logtest.txt
+sudo iperf -c 192.168.0.2 -u -b 400k -1 800 -p 10001 -t 45000 | tee -a /home/debian/logtest.txt
+exit 0
