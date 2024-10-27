@@ -1,13 +1,13 @@
 # Proof of Concept of a Robot Arm Controlled by Light Using Open Source Tools
-4th Year Project
+4th Year Project (2020-2021)
 
 **Authors**: Théo Deffrennes, Charles Moulin, Benoît Vidotto
 
 **Polytech Mons (FPMs), UMONS, Belgium**
 
-   <figure align="center">
+   <p align="center">
       <img src="./images/image30.webp" alt="bar" width="100%">
-   </figure>
+   </p>
 
 ## Introduction
 
@@ -17,10 +17,12 @@ This 4th year's project explores an innovative solution for controlling a roboti
 
 One of the main benefits of VLC is its high bandwidth, which is unregulated and robust against interference from electromagnetic devices. Additionally, the absence of RF waves provides a more reassuring experience for users. Overall, VLC emerges as a more secure alternative to traditional RF communications.
 
-<figure align="center">
+<p align="center">
     <img src="./images/image25.webp" alt="bar" width="50%">
-    <figcaption>The high bandwidth of the visible light.</figcaption>
-</figure>
+    </p>
+<p align="center">
+    <em>The high bandwidth of the visible light.</em>
+</p>
 
 ## Objective
 
@@ -36,37 +38,44 @@ We employed version 1.3 of OpenVLC for our communication framework. This system 
 ### Hardware Components
 
 - **BeagleBone Black (BBB)**: A low-cost open-source board designed for developers and hobbyists, running a Linux operating system.
-  
-   <figure align="center">
+   <p align="center">
       <img src="./images/image27.webp" alt="bar" width="24%">
-   </figure>
-   
+      </p>
+<p align="center">
+    <em>The BeagleBone Black (BBB)</em>
+   </p>
 - **OpenVLC Cape**: Based on version 1.3, it includes a high-power LED and a photodiode.
-
-  <figure align="center">
+   <p align="center">
       <img src="./images/image26.webp" alt="bar" width="24%">
-   </figure>
-   
+      </p>
+<p align="center">
+    <em>The OpenVLC cape</em>
+   </p>
 - **Robotic Arm**: The Tinkerkit Braccio robot by Arduino, featuring six servo motors and a special cap for the arm.
-
-  <figure align="center">
+   <p align="center">
       <img src="./images/image28.webp" alt="bar" width="24%">
-   </figure>
-   
+      </p>
+<p align="center">
+    <em>The Arduino robot arm</em>
+   </p>
 - **Arduino Uno**: Central to controlling the robotic arm's movements.
 - **RGB LED**: Used for visual feedback during operation.
-
-  <figure align="center">
+   <p align="center">
       <img src="./images/image29.webp" alt="bar" width="24%">
-   </figure>
+      </p>
+<p align="center">
+    <em>The special cap for the robot arm above the Arduino Uno (on the left) and the RGB LED on the breadboard.</em>
+   </p>
 
 ## Architecture
 
 The architecture consists of multiple layers of communication:
-  
-   <figure align="center">
+   <p align="center">
       <img src="./images/image30.webp" alt="bar" width="100%">
-   </figure>
+      </p>
+<p align="center">
+    <em>The architecture.</em>
+   </p>
 
 1. **Client-Server Connection via USB**:
    - **GUI**: Sends parameters (angles and speed) as a string and can handle real-time control, saved positions, or sequence movements.
@@ -86,9 +95,12 @@ The architecture consists of multiple layers of communication:
    - Some positions and sequences of movement can be predefined.
    - The GUI has been written in Python using PyQT.
 
-   <figure align="center">
+   <p align="center">
       <img src="./images/image31.webp" alt="bar" width="40%">
-   </figure>
+      </p>
+<p align="center">
+    <em>The graphical user interface (GUI).</em>
+   </p>
 
 ## Demonstration
 
@@ -105,27 +117,36 @@ We conducted a video demonstration showcasing the transmission and control of th
 ### On/Off Parasitic Light
 
 We conducted extensive tests (over 12 hours) to evaluate stability under simulated industrial conditions. The BBB TX was placed on the ceiling, while the BBB RX was positioned on the ground, separated by 1.86 meters. We introduced parasitic light by using a simple incandescent bulb that turned on and off every 20 minutes.
-   <figure align="center">
+   <p align="center">
       <img src="./images/image35.webp" alt="bar" width="23%">
       <img src="./images/image36.webp" alt="bar" width="50%">
-   </figure>
+      </p>
+<p align="center">
+    <em>A schema of the testing protocol for parasitic light (left) and the loss rate of information by the time elapsed.</em>
+   </p>
 On the previous image, we notice that the OpenVLC is quite reliable with relation to parasitic light.
 
 ### Distance Testing
 
 Both BeagleBones were positioned at the same level on the ground. Tests were conducted in darkness, with distances varied every 20 to 30 minutes, demonstrating that distance would not pose a significant problem in an Industry 4.0 scenario.
-   <figure align="center">
+   <p align="center">
       <img src="./images/image38.webp" alt="bar" width="30%">
       <img src="./images/image37.webp" alt="bar" width="40%">
-   </figure>
+      </p>
+<p align="center">
+    <em>A schema of the testing protocol for distance (left) and the evolution of packet loss rate by the distance.</em>
+   </p>
 On this image, we can see that the receptor seems to be saturated below one meter and looses too much information over 5.5 meters.
 
 ### Throughput Testing
 
 We analyzed throughput in a dim environment with BeagleBones placed horizontally. The maximum throughput was capped at 400 kbit/s, calculated considering the packet loss rate : it is not worth spending the extra energy to go beyon 400 kbit/s. This value seems to be the sweet spot as 350 kbit/s suffers from too much loss.
-   <figure align="center">
+   <p align="center">
       <img src="./images/image39.webp" alt="bar" width="65%">
-   </figure>
+      </p>
+<p align="center">
+    <em>Packet loss rate and maximum throughput as a function of time.</em>
+   </p>
 
 ## Challenges
 
