@@ -33,39 +33,39 @@ The primary goal of our project was to demonstrate the feasibility of using VLC 
 
 ### Visible Light Communication
 
-We employed version 1.3 of OpenVLC for our communication framework. This system facilitates the exchange of data in digital form. At the transmitter end, an electrical signal is converted into a light signal through modulation of a LED's intensity, utilizing On-Off Keying (OOK) for data transmission. On the receiver side, a photodiode transforms the optical signal back into an electrical signal.
+We employed version 1.3 of [OpenVLC](https://github.com/openvlc/OpenVLC) for our communication framework. This system facilitates the exchange of data in digital form. At the transmitter end, an electrical signal is converted into a light signal through modulation of a LED's intensity, utilizing On-Off Keying (OOK) for data transmission. On the receiver side, a photodiode transforms the optical signal back into an electrical signal.
 
 ### Hardware Components
 
-- **BeagleBone Black (BBB)**: A low-cost open-source board designed for developers and hobbyists, running a Linux operating system.
+- **[BeagleBone Black](https://github.com/CircuitCo/BeagleBone-Black) (BBB)**: A low-cost open-source board designed for developers and hobbyists, running a Linux operating system.
    <p align="center">
       <img src="./images/image27.webp" alt="bar" width="24%">
       </p>
-<p align="center">
-    <em>The BeagleBone Black (BBB)</em>
-   </p>
-- **OpenVLC Cape**: Based on version 1.3, it includes a high-power LED and a photodiode.
+   <p align="center">
+       <em>The BeagleBone Black (BBB)</em>
+      </p>
+-  **[OpenVLC](https://github.com/openvlc/OpenVLC) Cape** : Based on version 1.3, it includes a high-power LED and a photodiode.
    <p align="center">
       <img src="./images/image26.webp" alt="bar" width="24%">
       </p>
-<p align="center">
-    <em>The OpenVLC cape</em>
-   </p>
+   <p align="center">
+       <em>The OpenVLC cape</em>
+      </p>
 - **Robotic Arm**: The Tinkerkit Braccio robot by Arduino, featuring six servo motors and a special cap for the arm.
    <p align="center">
       <img src="./images/image28.webp" alt="bar" width="24%">
       </p>
-<p align="center">
-    <em>The Arduino robot arm</em>
-   </p>
+   <p align="center">
+       <em>The Arduino robot arm</em>
+      </p>
 - **Arduino Uno**: Central to controlling the robotic arm's movements.
 - **RGB LED**: Used for visual feedback during operation.
    <p align="center">
       <img src="./images/image29.webp" alt="bar" width="24%">
       </p>
-<p align="center">
-    <em>The special cap for the robot arm above the Arduino Uno (on the left) and the RGB LED on the breadboard.</em>
-   </p>
+   <p align="center">
+       <em>The special cap for the robot arm above the Arduino Uno (on the left) and the RGB LED on the breadboard.</em>
+      </p>
 
 ## Architecture
 
@@ -124,7 +124,7 @@ We conducted extensive tests (over 12 hours) to evaluate stability under simulat
 <p align="center">
     <em>A schema of the testing protocol for parasitic light (left) and the loss rate of information by the time elapsed.</em>
    </p>
-On the previous image, we notice that the OpenVLC is quite reliable with relation to parasitic light.
+On the previous image, we notice that the [OpenVLC](https://github.com/openvlc/OpenVLC) is quite reliable with relation to parasitic light.
 
 ### Distance Testing
 
